@@ -1,4 +1,7 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/logo/logo.svg" width="400" alt="Laravel Logo"></a></p>
+★ README ★ | [Desafio](docs/CHALLENGE.md) | [O que é Pokémon](docs/GLOSSARY.md)  | [Arquitetura](docs/ARCHITECTURE.md) | [Banco de Dados](docs/DATABASE.md) | [Instalação](docs/INSTALL.md)
+
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/logo/logo.svg" width="400" alt="Desafio ipe.digital"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -23,11 +26,11 @@ Demonstrar domínio do Laravel + Blade, consumindo uma API pública do PokéAPI,
 ## API pública PokéAPI
 Se trata de um banco de dados técnico e gratuito que centraliza praticamente todas as informações da franquia Pokémon. Será usada como fonte de informações para importação e sincronização com nossa base de dados.
 
-A documentação está acessível neste link: [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
+Link da documentação: [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
 
 
-## Como Iniciar
-Este projeto utiliza **Laravel Sail** (Docker) para garantir a consistência do ambiente.
+## Instalando o Projeto
+Este projeto utiliza **Laravel Sail** (Docker) para garantir a consistência do ambiente e facilitar a configuração.
 
 ### **Passo 01**: Clone o repositório do desafio em uma pasta vazia
 ```bash
@@ -69,3 +72,7 @@ Navegue pela documentação, para mais detalhes:
 
 ## Licença
 Esta aplicação de desafio é um software de código aberto licenciado sob a [licença MIT](https://opensource.org/licenses/MIT).
+
+---
+
+★ README ★ | [Desafio](docs/CHALLENGE.md) | [O que é Pokémon](docs/GLOSSARY.md)  | [Arquitetura](docs/ARCHITECTURE.md) | [Banco de Dados](docs/DATABASE.md) | [Instalação](docs/INSTALL.md)

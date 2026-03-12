@@ -1,4 +1,4 @@
-[ ⭠ Voltar para README](../README.md) | ★ Arquitetura ★ | [Desafio](./CHALLENGE.md) |  [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md)  | ★ Arquitetura ★ | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
 
 # Arquitetura e Decisões
@@ -44,4 +44,4 @@ A aplicação utiliza o sistema de logs do Laravel para registrar:
 
 ---
 
-[ ⭠ Voltar para README](../README.md) | ★ Arquitetura ★ | [Desafio](./CHALLENGE.md) |  [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md)  | ★ Arquitetura ★ | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)

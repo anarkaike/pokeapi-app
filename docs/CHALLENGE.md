@@ -1,4 +1,4 @@
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Desafio ★ |  [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | ★ Desafio ★ | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) |  [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
 # Especificação do Desafio Técnico: PokéAPI APP
 
@@ -56,4 +56,4 @@ Ao importar um Pokémon, o sistema deve salvar:
 
 ---
 
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Desafio ★ |  [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | ★ Desafio ★ | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) |  [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)

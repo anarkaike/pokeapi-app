@@ -1,4 +1,4 @@
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | [Banco de Dados](./DATABASE.md) | ★ O que é Pokémon ★ | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | ★ O que é Pokémon ★ | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
 # Domínio de Negócio: O Universo Pokémon
 
@@ -30,4 +30,4 @@ São as ações ativas que o Pokémon executa sob comando. É o arsenal ofensivo
 
 ---
 
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | [Banco de Dados](./DATABASE.md) | ★ O que é Pokémon ★ | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | ★ O que é Pokémon ★ | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)

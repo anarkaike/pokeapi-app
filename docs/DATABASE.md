@@ -1,4 +1,4 @@
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | ★ Banco de Dados ★ | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Banco de Dados ★ | [Instalação](./INSTALL.md)
 
 # Modelagem do Banco de Dados
 
@@ -79,5 +79,5 @@ Tabela padrão do Laravel estendida para suportar o controle de acesso por perfi
 
 ---
 
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | ★ Banco de Dados ★ | [O que é Pokémon](./GLOSSARY.md) | [Instalação](./INSTALL.md)
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Banco de Dados ★ | [Instalação](./INSTALL.md)
 

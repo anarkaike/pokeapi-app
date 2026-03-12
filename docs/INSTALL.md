@@ -1,4 +1,4 @@
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | ★ Instalação ★
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | ★ Instalação ★
 
 # Instalação e Setup
 
@@ -45,4 +45,4 @@ Utilize os acessos abaixo para validar as policies de cada perfil:
 
 ---
 
-[ ⭠ Voltar para README](../README.md) | [Arquitetura](./ARCHITECTURE.md) | [Desafio](./CHALLENGE.md) | [Banco de Dados](./DATABASE.md) | [O que é Pokémon](./GLOSSARY.md) | ★ Instalação ★
+[ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | ★ Instalação ★

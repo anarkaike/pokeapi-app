@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Illuminate\Support\{ Facades\Hash, Str };
+use App\{ Enums\UserRole, Models\User };
 
 /**
  * @extends Factory<User>
@@ -25,12 +24,37 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name'              => fake()->name(),
+            'email'             => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'password'          => static::$password ??= Hash::make('password'),
+            'remember_token'    => Str::random(10),
+            'role'              => UserRole::VIEWER,
         ];
+    }
+
+    /**
+     * Indicate that the model's role should be admin.
+     */
+    public function admin(): static
+    {
+        return $this->state(fn () => ['role' => UserRole::ADMIN]);
+    }
+
+    /**
+     * Indicate that the model's role should be editor.
+     */
+    public function editor(): static
+    {
+        return $this->state(fn () => ['role' => UserRole::EDITOR]);
+    }
+
+    /**
+     * Indicate that the model's role should be viewer.
+     */
+    public function viewer(): static
+    {
+        return $this->state(fn () => ['role' => UserRole::VIEWER]);
     }
 
     /**

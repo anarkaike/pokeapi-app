@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\{ Pokemon, Ability, Move, Type };
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory()->admin()->create(['email' => 'admin@teste.com']);
+        User::factory()->editor()->create(['email' => 'editor@teste.com']);
+        User::factory()->create(['email' => 'viewer@teste.com']);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Pokemon::factory(20)->withAttributes()->create();
     }
 }
