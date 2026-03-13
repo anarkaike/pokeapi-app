@@ -16,11 +16,11 @@ Este é um case de desafio técnico desenvolvido para o processo seletivo da ipe
 
 
 ## Objetivo
-Demonstrar domínio do Laravel + Blade, consumindo uma API pública do PokéAPI, oferecendo um administrador básico com três perfis de acesso:
+Demonstrar domínio do Laravel + Blade, consumindo uma API pública do PokéAPI, oferecendo um administrador básico com três perfis de acesso e funcionalidades:
 
-- **Viewer**: Apenas visualiza dados já importados.
-- **Editor**: Importa, sincroniza e favorita dados importados.
-- **Admin**: Gerencia os usuários, permissões e registros.
+- **Viewer**: Apenas visualiza dados já importados da PokéAPI.
+- **Editor**: Importa, sincroniza e favorita Pokémons da PokéAPI.
+- **Admin**: Gerencia os usuários, permissões, registros e também favorita Pokémons da PokéAPI.
 
 
 ## API pública PokéAPI

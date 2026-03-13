@@ -2,7 +2,7 @@
 
 # Instalação e Setup
 
-Instruções para configurar o ambiente local utilizando Laravel Sail.
+Instruções para configurar a aplicação no ambiente local utilizando Laravel Sail.
 
 ## Pré-requisitos
 - OrbStack ou Docker Desktop
@@ -16,21 +16,15 @@ git clone https://github.com/anarkaike/pokeapi-app.git .
 ```
 
 ### 2. Subir os containers
-Suba os containers do projeto.
+Suba os containers do projeto. Garanta que o docker esteja rodando.
 ```bash
 ./vendor/bin/sail up -d
 ```
 
 ### 3. Setup Automatizado
-Gere o banco de dados locais, chave da aplicação e rode as migrations e seeds.
+Limpe todos os caches, gere a chave, link storage, rode todas as migrations e seeds, execute a instalação do npm e compilação do vite com um único comando:
 ```bash
 ./vendor/bin/sail artisan app:install
-```
-
-### 4. Compilar Assets
-```bash
-./vendor/bin/sail npm install
-./vendor/bin/sail npm run build
 ```
 
 ## Credenciais de Teste
