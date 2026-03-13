@@ -123,4 +123,21 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Data used in DatabaseSeeders
+    |--------------------------------------------------------------------------
+    |
+    | These are the initial access data for each type of profile for testing purposes.
+    |
+    */
+    'seeders' => [
+        'admin_email'       => env('SEEDER_ADMIN_EMAIL',        'admin@ipe.digital'),
+        'admin_password'    => env('SEEDER_ADMIN_PASSWORD',     'Senh@123'),
+        'editor_email'      => env('SEEDER_EDITOR_EMAIL',       'editor@ipe.digital'),
+        'editor_password'   => env('SEEDER_EDITOR_PASSWORD',    'Senh@123'),
+        'viewer_email'      => env('SEEDER_VIEWER_EMAIL',       'viewer@ipe.digital'),
+        'viewer_password'   => env('SEEDER_VIEWER_PASSWORD',    'Senh@123'),
+    ],
+
 ];
