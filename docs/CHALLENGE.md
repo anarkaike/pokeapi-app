@@ -1,6 +1,6 @@
 [ ⭠ Voltar para README](../README.md) | ★ Desafio ★ | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) |  [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
-# Especificação do Desafio Técnico: PokéAPI APP
+# Especificação do Desafio Técnico: PokéApp
 
 Foi transcrito neste markdown os requisitos oficiais do desafio técnico, passados para a vaga de **Laravel Pleno** na **ipe.digital**.
 

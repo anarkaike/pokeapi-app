@@ -10,7 +10,7 @@
 </p>
 
 
-# Sobre o PokéAPI APP
+# Sobre o PokéApp
 Este é um case de desafio técnico desenvolvido para o processo seletivo da ipe.digital, para a vaga de Laravel Pleno. 
 
 
@@ -46,6 +46,9 @@ git clone https://github.com/anarkaike/pokeapi-app.git .
 ./vendor/bin/sail artisan app:install
 ```
 
+Após os passos, acesse http://localhost 
+
+Para mais detalhes, ver [documentação detalhada da instalação](./docs/INSTALL.md).
 
 ## Credenciais de Acesso
 Ao instalar o projeto, utilize as credenciais abaixo para logar em cada um dos perfíls de acesso.

@@ -28,7 +28,7 @@ class PokeApiClient implements PokeApiInterface
                 $response = Http::timeout(5)->retry(3, 100)->get("{$this->baseUrl}/pokemon/{$identifier}");
 
                 if ($response->failed()) {
-                    Log::warning("PokéAPI: Pokémon '{$identifier}' não encontrado ou erro na resposta.", [
+                    Log::warning("PokéApp: Pokémon '{$identifier}' não encontrado ou erro na resposta.", [
                         'status' => $response->status(),
                         'identifier' => $identifier
                     ]);
@@ -39,7 +39,7 @@ class PokeApiClient implements PokeApiInterface
                 return PokemonData::fromApi($response->json());
 
             } catch (Exception $e) {
-                Log::error('PokéAPI Integration Error: ' . $e->getMessage(), [
+                Log::error('PokéApp Integration Error: ' . $e->getMessage(), [
                     'identifier'    => $identifier,
                     'exception'     => $e
                 ]);

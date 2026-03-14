@@ -3,5 +3,5 @@
     'height' => 'h-auto',
     'class' => '',
 ])
-<img src="{{ asset('images/logo.png') }}" alt="PokéAPI Logo"
+<img src="{{ asset('images/logo.png') }}" alt="PokéApp Logo"
     {{ $attributes->merge(['class' => "$width $height $class"]) }}>

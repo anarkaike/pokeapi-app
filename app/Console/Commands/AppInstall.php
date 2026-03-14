@@ -26,7 +26,7 @@ class AppInstall extends Command
      */
     public function handle()
     {
-        $this->newLine()->alert('Iniciando o setup da PokéAPI App');
+        $this->newLine()->alert('Iniciando o setup da PokéApp');
 
         $this->clearAllCaches();
         $this->generateKeyAndLinkStorage();
@@ -38,6 +38,7 @@ class AppInstall extends Command
 
         $this->showUsersTable();
 
+        // TODO: Não consegui fazer funcionar dentro deste comando
         // if ($this->confirm('Deseja utilizar Hot Reload (npm run dev) em vez de build estático?', false)) {
         //     $this->npmRunDev();
         // }
@@ -60,7 +61,7 @@ class AppInstall extends Command
     private function npmInstallAndBuild() {
         $this->newLine()->info('  ➔ Instalando dependências do NPM...');
         Process::forever()->run('npm install')->throw();
-        
+
         $this->newLine()->info('  ➔ Compilando assets do Vite...');
         Process::forever()->run('npm run build')->throw();
     }
