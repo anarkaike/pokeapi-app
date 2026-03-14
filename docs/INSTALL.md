@@ -27,11 +27,13 @@ Limpe todos os caches, gere a chave, link storage, rode todas as migrations e se
 ./vendor/bin/sail artisan app:install
 ```
 
-### 3. Hot Reload
+### 4. Hot Reload (opcional, para desenvolvimento)
 Caso queira ativar o Hot Reload para melhor DX (Experiência de Desenvolvimento) rode:
 ```bash
 ./vendor/bin/sail npm run dev
 ```
+
+Após os passos, acesse http://localhost 
 
 
 ## Credenciais de Teste
