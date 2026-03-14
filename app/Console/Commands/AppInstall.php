@@ -37,6 +37,10 @@ class AppInstall extends Command
         $this->newLine(2)->info('✅ Aplicação pronta para uso em: ' . config('app.url'));
 
         $this->showUsersTable();
+
+        // if ($this->confirm('Deseja utilizar Hot Reload (npm run dev) em vez de build estático?', false)) {
+        //     $this->npmRunDev();
+        // }
     }
 
     private function clearAllCaches() {
@@ -56,9 +60,14 @@ class AppInstall extends Command
     private function npmInstallAndBuild() {
         $this->newLine()->info('  ➔ Instalando dependências do NPM...');
         Process::forever()->run('npm install')->throw();
-
+        
         $this->newLine()->info('  ➔ Compilando assets do Vite...');
         Process::forever()->run('npm run build')->throw();
+    }
+
+    private function npmRunDev() {
+        $this->newLine()->info('  ➔ Iniciando servidor de desenvolvimento (Vite)...');
+        Process::forever()->run('npm run dev')->throw();
     }
 
     private function migrateFreshWithSeed() {
