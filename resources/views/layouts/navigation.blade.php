@@ -11,9 +11,21 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <div class="hidden space-x-1 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="px-5">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('pokemons')" :active="request()->routeIs('pokemons')" class="px-5">
+                        {{ __('Pokémons') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('types')" :active="request()->routeIs('types')" class="px-5">
+                        {{ __('Tipos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('abilities')" :active="request()->routeIs('abilities')" class="px-5">
+                        {{ __('Habilidades') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('moves')" :active="request()->routeIs('moves')" class="px-5">
+                        {{ __('Movimentos') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -74,32 +86,38 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+        <div class="space-y-1 justify-center text-center">
+            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="px-2">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            </x-nav-link>
+            <x-nav-link :href="route('pokemons')" :active="request()->routeIs('pokemons')" class="px-2">
+                {{ __('Pokémons') }}
+            </x-nav-link>
+            <x-nav-link :href="route('types')" :active="request()->routeIs('types')" class="px-2">
+                {{ __('Tipos') }}
+            </x-nav-link>
+            <x-nav-link :href="route('abilities')" :active="request()->routeIs('abilities')" class="px-2">
+                {{ __('Habilidades') }}
+            </x-nav-link>
+            <x-nav-link :href="route('moves')" :active="request()->routeIs('moves')" class="px-2">
+                {{ __('Movimentos') }}
+            </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
+        <div class="py-2 flex items-center justify-between">
+            <a href="/profile" class="px-2">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
+            </a>
+            <div class="px-2">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
                         onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Sair do Sistema') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
