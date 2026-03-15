@@ -15,18 +15,8 @@ class Ability extends Model
 
     protected $table = 'abilities';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<string>
-     */
     protected $fillable = ['name'];
 
-    /**
-     * The pokemons that have this ability.
-     *
-     * @return BelongsToMany
-     */
     public function pokemons() { 
         return $this->belongsToMany(Pokemon::class, 'pokemon_ability'); 
     }

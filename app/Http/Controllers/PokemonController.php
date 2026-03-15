@@ -23,6 +23,8 @@ class PokemonController extends Controller
 
     public function index(Request $request, PokeApiClient $client)
     {
+        $this->authorize('viewAny', Pokemon::class);
+
         $selected      = $request->query('selected');
         $pokemonDetail = null;
         $page          = (int) $request->input('page', 1);
@@ -39,7 +41,6 @@ class PokemonController extends Controller
             if ($selected) {
                 $pokemonDetail = $client->getPokemon($selected);
             }
-                
             return view('pages.pokemons', [
                 'pokemons'      => $data['results'],
                 'pokemonDetail' => $pokemonDetail,
@@ -57,8 +58,14 @@ class PokemonController extends Controller
     public function show($identifier)
     {
         try {
+            $this->authorize('view', Pokemon::class);
+
             $pokemonData = $this->apiClient->fetchPokemon($identifier);
             $local       = Pokemon::where('name', $identifier)->first();
+
+            if ($local) {
+                $this->authorize('view', $local);
+            }
 
             return view('pages.pokemon-detail', compact('pokemonData', 'local'));
         } catch (\Exception $e) {
@@ -66,7 +73,7 @@ class PokemonController extends Controller
         }
     }
 
-    public function store(ImportPokemonRequest $request, PokeApiInterface $apiClient, PokemonImporter $importer)
+    public function sync(ImportPokemonRequest $request, PokeApiInterface $apiClient, PokemonImporter $importer)
     {
         $this->authorize('import', Pokemon::class);
 
@@ -80,12 +87,11 @@ class PokemonController extends Controller
             return redirect()->back()->with('error', 'Erro ao sincronizar Pokémon.');
         }
     }
-    
     public function syncAll()
     {
         $this->authorize('import', Pokemon::class);
 
-        $allNames = $this->apiClient->fetchList(2000, 0)['results']; 
+        $allNames = $this->apiClient->fetchList(2000, 0)['results'];
 
         foreach ($allNames as $p) {
             SyncPokemonJob::dispatch($p['name']);
@@ -109,7 +115,7 @@ class PokemonController extends Controller
     public function toggleFavorite(Pokemon $pokemon)
     {
         $this->authorize('favorite', $pokemon);
-        Auth::user()->favorites()->toggle($pokemon->id);   
+        Auth::user()->favorites()->toggle($pokemon->id);
         return redirect()->back()->with('success', 'Sua lista de favoritos foi atualizada!');
     }
 }

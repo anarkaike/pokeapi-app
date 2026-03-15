@@ -10,9 +10,6 @@ class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
 
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         User::factory()->admin() ->create([
@@ -28,6 +25,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt(config('app.seeders.viewer_password'))
         ]);
 
+
+        User::factory(50)->viewer()->create();
         // Pokemon::factory(20)->withAttributes()->create();
     }
 }

@@ -12,13 +12,9 @@
     <x-nav-link :href="route('pokemons.index')" :active="request()->routeIs('pokemons.index')" :class="$linkClass">
         {{ __('Pokémons') }}
     </x-nav-link>
-    <x-nav-link :href="route('types')" :active="request()->routeIs('types')" :class="$linkClass">
-        {{ __('Tipos') }}
-    </x-nav-link>
-    <x-nav-link :href="route('abilities')" :active="request()->routeIs('abilities')" :class="$linkClass">
-        {{ __('Habilidades') }}
-    </x-nav-link>
-    <x-nav-link :href="route('moves')" :active="request()->routeIs('moves')" :class="$linkClass">
-        {{ __('Movimentos') }}
-    </x-nav-link>
+    @can('viewAny', App\Models\User::class)
+        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')" :class="$linkClass">
+            {{ __('Usuários') }}
+        </x-nav-link>
+    @endcan
 </div>

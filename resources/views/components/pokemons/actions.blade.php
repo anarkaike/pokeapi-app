@@ -19,12 +19,12 @@
         @endcan
 
         @can('import', App\Models\Pokemon::class)
-            <x-buttons.resync-button :action="route('pokemons.store')" :pokemonName="$pokemon['name']" />
+            <x-buttons.resync-button :action="route('pokemons.sync')" :pokemonName="$pokemon['name']" />
         @endcan
 
     </div>
 @else
-    <form action="{{ route('pokemons.store') }}" method="POST" x-data="{ loading: false }" @submit="loading = true"
+    <form action="{{ route('pokemons.sync') }}" method="POST" x-data="{ loading: false }" @submit="loading = true"
         class="mt-auto w-full flex justify-center mb-2">
         @csrf
         <input type="hidden" name="name" value="{{ $pokemon['name'] }}">
