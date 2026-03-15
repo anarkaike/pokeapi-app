@@ -12,35 +12,21 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
-    
+
     protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<string>
-     */
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
@@ -52,10 +38,26 @@ class User extends Authenticatable
 
     /**
      * The pokemons that the user has favorited.
-     * 
+     *
      * @return BelongsToMany
      */
+
     public function favorites() {
         return $this->belongsToMany(Pokemon::class, 'user_favorites')->withTimestamps();
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::ADMIN;
+    }
+
+    public function isEditor(): bool
+    {
+        return $this->role === UserRole::EDITOR;
+    }
+
+    public function isViewer(): bool
+    {
+        return $this->role === UserRole::VIEWER;
     }
 }

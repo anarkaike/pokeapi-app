@@ -2,27 +2,23 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Gate;
+
+use Illuminate\Support\{ ServiceProvider, Facades\Gate, Facades\App };
 use App\Models\Pokemon;
 use App\Policies\PokemonPolicy;
+use App\Contracts\PokeApiInterface;
+use App\Services\PokeApiClient;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        $this->app->bind(\App\Contracts\PokeApiInterface::class, \App\Services\PokeApiClient::class);
+        $this->app->bind(PokeApiInterface::class, PokeApiClient::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        \Illuminate\Support\Facades\App::setLocale('pt_BR');
+        App::setLocale('pt_BR');
         Gate::policy(Pokemon::class, PokemonPolicy::class);
     }
 }

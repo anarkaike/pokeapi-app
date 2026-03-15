@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('Pokédex - Catálogo Pokémon') }}</h2>
@@ -10,15 +11,17 @@
     </x-slot>
 
     @if ($pokemonDetail)
-        <x-box-container>
+        <x-box-container padding="sm">
             <x-pokemons.detail-section :pokemon="$pokemonDetail" />
         </x-box-container>
     @endif
 
-    <x-pokemons.filter-bar />
+    <x-box-container padding="sm">
+        <x-pokemons.filter-bar />
+    </x-box-container>
 
-    <x-box-container>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2 py-2">
+    <x-box-container padding="sm">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
 
             @forelse ($pokemons as $pokemon)
                 @php
@@ -44,7 +47,7 @@
         </div>
     </x-box-container>
 
-    <x-box-container>
+    <x-box-container padding="xs">
         <x-pagination :currentPage="$currentPage" :totalPages="$totalPages" routeName="pokemons.index" />
     </x-box-container>
 

@@ -4,12 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Pokemon;
 
 class ImportPokemonRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return Auth::check();
+        return $this->user()?->can('import', Pokemon::class) ?? false;
     }
 
     public function rules(): array

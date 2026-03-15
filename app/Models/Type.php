@@ -15,18 +15,8 @@ class Type extends Model
 
     protected $table = 'types';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<string>
-     */
     protected $fillable = ['name'];
     
-    /**
-     * The pokemons that belong to this type.
-     * 
-     * @return BelongsToMany
-     */
     public function pokemons() { 
         return $this->belongsToMany(Pokemon::class); 
     }

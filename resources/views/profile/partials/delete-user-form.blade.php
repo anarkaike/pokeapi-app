@@ -10,8 +10,8 @@
     </header>
 
     <div class="flex items-center gap-4 justify-end">
-        <x-danger-button x-data=""
-            x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">{{ __('Deletar Conta') }}</x-danger-button>
+        <x-buttons.danger-button x-data=""
+            x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">{{ __('Deletar Conta') }}</x-buttons.danger-button>
     </div>
 
     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
@@ -41,9 +41,9 @@
                     {{ __('Cancelar') }}
                 </x-buttons.secondary-button>
 
-                <x-danger-button class="ms-3">
+                <x-buttons.danger-button class="ms-3">
                     {{ __('Deletar Conta') }}
-                </x-danger-button>
+                </x-buttons.danger-button>
             </div>
         </form>
     </x-modal>

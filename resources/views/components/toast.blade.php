@@ -21,10 +21,11 @@
 @endphp
 
 @if ($type)
-    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" x-transition:enter="transition duration-300"
-        x-transition:enter-start="opacity-0" x-transition:leave="transition ease-in duration-300"
+    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)"
+        x-transition:enter="transition duration-300 transform" x-transition:enter-start="opacity-0 translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-300"
         x-transition:leave-end="opacity-0 translate-x-full"
-        class="fixed bottom-4 right-4 z-50 flex min-w-64 items-center justify-between gap-4 rounded shadow-md px-4 py-3 text-sm font-medium text-white {{ $bgClass }}">
+        class="fixed bottom-4 right-4 z-50 flex min-w-64 items-center justify-between gap-4 rounded-lg shadow-lg px-4 py-3 text-sm font-medium text-white {{ $bgClass }}">
 
         <p>{{ $message }}</p>
 
