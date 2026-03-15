@@ -1,5 +1,9 @@
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | ★ Instalação ★
 
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 # Instalação e Setup
 
 Instruções para configurar a aplicação no ambiente local utilizando Laravel Sail.
@@ -49,3 +53,7 @@ Utilize os acessos abaixo para validar as policies de cada perfil:
 ---
 
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | ★ Instalação ★
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>

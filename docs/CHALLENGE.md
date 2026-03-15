@@ -1,5 +1,9 @@
 [ ⭠ Voltar para README](../README.md) | ★ Desafio ★ | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) |  [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 # Especificação do Desafio Técnico: PokéApp
 
 Foi transcrito neste markdown os requisitos oficiais do desafio técnico, passados para a vaga de **Laravel Pleno** na **ipe.digital**.
@@ -57,3 +61,7 @@ Ao importar um Pokémon, o sistema deve salvar:
 ---
 
 [ ⭠ Voltar para README](../README.md) | ★ Desafio ★ | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) |  [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>

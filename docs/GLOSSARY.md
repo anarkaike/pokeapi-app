@@ -1,5 +1,9 @@
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | ★ O que é Pokémon ★ | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 # Domínio de Negócio: O Universo Pokémon
 
 Glossário para alinhar o entendimento do domínio da aplicação. O objetivo é garantir compreensão semântica dos dados que estamos consumindo da PokéAPI a quem não tem familiaridade prévia com a franquia.
@@ -31,3 +35,7 @@ São as ações ativas que o Pokémon executa sob comando. É o arsenal ofensivo
 ---
 
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | ★ O que é Pokémon ★ | [Arquitetura](./ARCHITECTURE.md) | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>

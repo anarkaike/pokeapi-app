@@ -1,7 +1,8 @@
 ★ README ★ | [Desafio](docs/CHALLENGE.md) | [O que é Pokémon](docs/GLOSSARY.md)  | [Arquitetura](docs/ARCHITECTURE.md) | [Banco de Dados](docs/DATABASE.md) | [Instalação](docs/INSTALL.md)
 
 
-<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/logo/logo.svg" width="400" alt="Desafio ipe.digital"></a></p>
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/uploads/2023/03/ilustracao-home-2048x1548.png" width="80%" alt="Desafio ipe.digital"></a></p>
+
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -46,9 +47,16 @@ git clone https://github.com/anarkaike/pokeapi-app.git .
 ./vendor/bin/sail artisan app:install
 ```
 
+
 Após os passos, acesse http://localhost 
 
 Para mais detalhes, ver [documentação detalhada da instalação](./docs/INSTALL.md).
+
+
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 
 ## Credenciais de Acesso
 Ao instalar o projeto, utilize as credenciais abaixo para logar em cada um dos perfíls de acesso.
@@ -59,7 +67,8 @@ Ao instalar o projeto, utilize as credenciais abaixo para logar em cada um dos p
 | Editor   | editor@ipe.digital   | Senh@123  | Importações, sincronizações e favoritar    |
 | Viewer   | viewer@ipe.digital   | Senh@123  | Somente leitura                            |
 
-## Decisões Técnicas
+
+## Principais Definições Técnicas do Desafio
 - **Cache**: Implementado via Redis para evitar rate-limit da PokéAPI.
 - **Segurança**: Uso de Laravel Policies para isolamento de ações por perfil.
 - **Jobs/Commands**: Sincronização em background para não travar a UI.
@@ -75,6 +84,11 @@ Navegue pela documentação, para mais detalhes:
 ## Licença
 Esta aplicação de desafio é um software de código aberto licenciado sob a [licença MIT](https://opensource.org/licenses/MIT).
 
+
 ---
 
 ★ README ★ | [Desafio](docs/CHALLENGE.md) | [O que é Pokémon](docs/GLOSSARY.md)  | [Arquitetura](docs/ARCHITECTURE.md) | [Banco de Dados](docs/DATABASE.md) | [Instalação](docs/INSTALL.md)
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>

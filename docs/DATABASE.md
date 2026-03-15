@@ -1,5 +1,9 @@
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Banco de Dados ★ | [Instalação](./INSTALL.md)
 
+
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 # Modelagem do Banco de Dados
 
 Esquema de banco de dados seguindo a risca as instruções e nomes citados no documento do desafio.
@@ -81,3 +85,7 @@ Tabela padrão do Laravel estendida para suportar o controle de acesso por perfi
 
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md) | [Arquitetura](./ARCHITECTURE.md) | ★ Banco de Dados ★ | [Instalação](./INSTALL.md)
 
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>

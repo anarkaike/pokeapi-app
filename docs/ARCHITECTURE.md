@@ -1,6 +1,9 @@
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md)  | ★ Arquitetura ★ | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
 
 
+<p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
+
+
 # Arquitetura e Decisões
 
 Padrões de projeto e as escolhas arquiteturais implementadas.
@@ -45,3 +48,7 @@ A aplicação utiliza o sistema de logs do Laravel para registrar:
 ---
 
 [ ⭠ Voltar para README](../README.md) | [Desafio](./CHALLENGE.md) | [O que é Pokémon](./GLOSSARY.md)  | ★ Arquitetura ★ | [Banco de Dados](./DATABASE.md) | [Instalação](./INSTALL.md)
+
+<br />
+
+<a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>
