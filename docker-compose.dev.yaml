@@ -3,30 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        COMPOSER_FLAGS: ''
     restart: unless-stopped
     ports:
       - '${APP_PORT:-80}:80'
     environment:
-      APP_ENV: '${APP_ENV:-local}'
-      APP_DEBUG: '${APP_DEBUG:-true}'
-      APP_URL: '${APP_URL:-http://localhost}'
-      APP_KEY: '${APP_KEY:-}'
-      DB_CONNECTION: '${DB_CONNECTION:-mysql}'
-      DB_HOST: '${DB_HOST:-mysql}'
-      DB_PORT: '${DB_PORT:-3306}'
-      DB_DATABASE: '${DB_DATABASE:-pokeapi_app}'
-      DB_USERNAME: '${DB_USERNAME:-pokeapi}'
-      DB_PASSWORD: '${DB_PASSWORD:-secret}'
-      CACHE_STORE: 'redis'
-      QUEUE_CONNECTION: '${QUEUE_CONNECTION:-redis}'
-      SESSION_DRIVER: 'database'
-      REDIS_CLIENT: '${REDIS_CLIENT:-phpredis}'
-      REDIS_HOST: '${REDIS_HOST:-redis}'
-      REDIS_PORT: '${REDIS_PORT:-6379}'
-      REDIS_PASSWORD: '${REDIS_PASSWORD:-null}'
       CONTAINER_ROLE: web
     volumes:
       - '.:/var/www/html'
+      - 'app_vendor_data:/var/www/html/vendor'
+      - 'node_modules_data:/var/www/html/node_modules'
     depends_on:
       mysql:
         condition: service_healthy
@@ -37,29 +24,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        COMPOSER_FLAGS: ''
     restart: unless-stopped
     environment:
-      APP_ENV: '${APP_ENV:-local}'
-      APP_DEBUG: '${APP_DEBUG:-true}'
-      APP_URL: '${APP_URL:-http://localhost}'
-      APP_KEY: '${APP_KEY:-}'
-      DB_CONNECTION: '${DB_CONNECTION:-mysql}'
-      DB_HOST: '${DB_HOST:-mysql}'
-      DB_PORT: '${DB_PORT:-3306}'
-      DB_DATABASE: '${DB_DATABASE:-pokeapi_app}'
-      DB_USERNAME: '${DB_USERNAME:-pokeapi}'
-      DB_PASSWORD: '${DB_PASSWORD:-secret}'
-      CACHE_STORE: 'redis'
-      QUEUE_CONNECTION: '${QUEUE_CONNECTION:-redis}'
-      SESSION_DRIVER: 'database'
-      REDIS_CLIENT: '${REDIS_CLIENT:-phpredis}'
-      REDIS_HOST: '${REDIS_HOST:-redis}'
-      REDIS_PORT: '${REDIS_PORT:-6379}'
-      REDIS_PASSWORD: '${REDIS_PASSWORD:-null}'
       CONTAINER_ROLE: queue
     command: ['php', 'artisan', 'queue:work', '--sleep=1', '--tries=3', '--max-time=3600']
     volumes:
       - '.:/var/www/html'
+      - 'queue_vendor_data:/var/www/html/vendor'
     depends_on:
       mysql:
         condition: service_healthy
@@ -103,4 +76,10 @@ volumes:
   mysql_data:
     driver: local
   redis_data:
+    driver: local
+  app_vendor_data:
+    driver: local
+  queue_vendor_data:
+    driver: local
+  node_modules_data:
     driver: local

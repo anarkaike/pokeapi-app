@@ -1,5 +1,7 @@
 FROM php:8.4-apache
 
+ARG COMPOSER_FLAGS=--no-dev
+
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -34,7 +36,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN composer install ${COMPOSER_FLAGS} --optimize-autoloader --no-interaction --no-scripts
 
 COPY . .
 

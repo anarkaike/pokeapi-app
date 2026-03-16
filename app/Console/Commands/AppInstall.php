@@ -3,34 +3,21 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Encryption\Encrypter;
 use Illuminate\Support\Facades\{ Redis, Process };
 
 class AppInstall extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'app:install';
+    protected $signature    = 'app:install';
+    protected $description  = 'Executa o setup completo da aplicação';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Executa o setup completo da aplicação (Clear Cache, Generate Key, Link Storage, Migrate Fresh, Seed)';
-
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
         $this->newLine()->alert('Iniciando o setup da PokéApp');
 
-        $this->migrateFreshWithSeed();
-        $this->clearAllCaches();
         $this->generateKeyAndLinkStorage();
+        $this->clearAllCaches();
+        $this->migrateFreshWithSeed();
         $this->npmInstallAndBuild();
         $this->flushAllRedis();
 
@@ -53,9 +40,15 @@ class AppInstall extends Command
     }
 
     private function generateKeyAndLinkStorage() {
-        $this->newLine()->info('  ➔ Gerando chave e link...');
-        $this->call('key:generate');
-        $this->call('storage:link');
+        $this->newLine()->info('  ➔ Validando chave e link...');
+
+        if ($this->appKeyIsMissingOrInvalid()) {
+            $this->call('key:generate', [ '--force' => true ]);
+        } else {
+            $this->info('  ➔ Chave da aplicação já está configurada.');
+        }
+
+        $this->call('storage:link', [ '--force' => true ]);
     }
 
     private function npmInstallAndBuild() {
@@ -93,6 +86,26 @@ class AppInstall extends Command
             ]
         );
         $this->newLine();
+    }
+
+    private function appKeyIsMissingOrInvalid(): bool {
+        $key = config('app.key');
+
+        if (!is_string($key) || $key === '') {
+            return true;
+        }
+
+        if (str_starts_with($key, 'base64:')) {
+            $decodedKey = base64_decode(substr($key, 7), true);
+
+            if ($decodedKey === false) {
+                return true;
+            }
+
+            $key = $decodedKey;
+        }
+
+        return !Encrypter::supported($key, config('app.cipher'));
     }
 
 }

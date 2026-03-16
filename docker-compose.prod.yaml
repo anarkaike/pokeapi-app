@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        COMPOSER_FLAGS: '--no-dev'
     restart: unless-stopped
     ports:
       - '${APP_PORT:-80}:80'
@@ -35,6 +37,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        COMPOSER_FLAGS: '--no-dev'
     restart: unless-stopped
     environment:
       APP_ENV: 'production'
