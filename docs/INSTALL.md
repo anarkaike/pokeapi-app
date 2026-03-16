@@ -6,7 +6,7 @@
 
 # Instalação e Setup
 
-Instruções para configurar a aplicação no ambiente local utilizando Laravel Sail.
+Instruções para configurar a aplicação no ambiente local com Docker Compose e em produção com um compose compatível com Coolify.
 
 ## Pré-requisitos
 - OrbStack ou Docker Desktop
@@ -19,25 +19,45 @@ Instruções para configurar a aplicação no ambiente local utilizando Laravel 
 git clone https://github.com/anarkaike/pokeapi-app.git .
 ```
 
-### 2. Subir os containers
+### 2. Crie o arquivo `.env` local
+```bash
+cp .env.example .env
+```
+
+### 3. Subir os containers
 Suba os containers do projeto. Garanta que o docker esteja rodando.
 ```bash
-./vendor/bin/sail up -d
+docker compose -f docker-compose.dev.yaml up -d --build
 ```
 
-### 3. Setup Automatizado
+### 4. Setup Automatizado
 Limpe todos os caches, gere a chave, link storage, rode todas as migrations e seeds, execute a instalação do npm e compilação do vite com um único comando:
 ```bash
-./vendor/bin/sail artisan app:install
+docker compose -f docker-compose.dev.yaml exec app php artisan app:install
 ```
 
-### 4. Hot Reload (opcional, para desenvolvimento)
-Caso queira ativar o Hot Reload para melhor DX (Experiência de Desenvolvimento) rode:
+### 5. Hot Reload (opcional, para desenvolvimento)
+Caso queira ativar o Hot Reload para melhor DX (Experiência de Desenvolvimento), rode:
 ```bash
-./vendor/bin/sail npm run dev
+npm run dev
 ```
 
-Após os passos, acesse http://localhost 
+Após os passos, acesse http://localhost
+
+## Produção e Coolify
+
+Utilize o arquivo `docker-compose.prod.yaml` como base de deploy.
+
+- **No Coolify**
+- Configure `APP_KEY`, `APP_URL`, `DB_*` e `REDIS_*` diretamente no painel
+- Não é necessário enviar `.env` no repositório
+
+- **No ambiente local**
+- Use o `.env` para validar também a stack de produção
+- Suba com:
+```bash
+docker compose -f docker-compose.prod.yaml up -d --build
+```
 
 
 ## Credenciais de Teste

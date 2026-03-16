@@ -5,8 +5,15 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "start": "concurrently \"./vendor/bin/sail up\" \"./vendor/bin/sail npm run dev\"",
-        "reset": "./vendor/bin/sail down -v && ./vendor/bin/sail up -d --build && ./vendor/bin/sail php artisan app:install && ./vendor/bin/sail npm run dev"
+        "docker:dev:up": "docker compose -f docker-compose.dev.yaml up -d --build",
+        "docker:dev:install": "docker compose -f docker-compose.dev.yaml exec app php artisan app:install",
+        "docker:dev:init": "npm run docker:dev:up && npm run docker:dev:install",
+        "docker:dev:down": "docker compose -f docker-compose.dev.yaml down",
+        "docker:dev:reset": "docker compose -f docker-compose.dev.yaml down -v && docker compose -f docker-compose.dev.yaml up -d --build",
+        "docker:prod:up": "docker compose -f docker-compose.prod.yaml up -d --build",
+        "docker:prod:install": "docker compose -f docker-compose.prod.yaml exec app php artisan app:install",
+        "docker:prod:init": "npm run docker:prod:up && npm run docker:prod:install",
+        "docker:prod:down": "docker compose -f docker-compose.prod.yaml down"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
