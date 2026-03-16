@@ -30,29 +30,34 @@ Link da documentação: [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
 
 
 ## Instalando o Projeto
-Este projeto utiliza **Laravel Sail** (Docker) para garantir a consistência do ambiente e facilitar a configuração.
+Este projeto utiliza **Docker Compose** para execução local e deploy.
 
 ### **Passo 01**: Clone o repositório do desafio em uma pasta vazia
 ```bash
 git clone https://github.com/anarkaike/pokeapi-app.git .
 ```
 
-### **Passo 02**: Suba os containers (requer Docker/OrbStack)
+### **Passo 02**: Crie o `.env` local
 ```bash
-./vendor/bin/sail up -d
+cp .env.example .env
 ```
 
-### **Passo 03**: Execute o setup inicial
+### **Passo 03**: Suba os containers (requer Docker/OrbStack)
 ```bash
-./vendor/bin/sail artisan app:install
+docker compose -f docker-compose.dev.yaml up -d --build
+```
+
+### **Passo 04**: Execute o setup inicial
+```bash
+docker compose -f docker-compose.dev.yaml exec app php artisan app:install
 ```
 
 
-Após os passos, acesse http://localhost 
+Após os passos, acesse http://localhost
 
 Para mais detalhes, ver [documentação detalhada da instalação](./docs/INSTALL.md).
 
-
+Para produção, utilize o `docker-compose.prod.yaml`, configure corretamente as variáveis de ambiente no seu servidor.
 
 <p align="center"><a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/ropade-mod.png" width="100%" alt="Desafio ipe.digital"></a></p>
 
@@ -81,9 +86,32 @@ Navegue pela documentação, para mais detalhes:
 - [Modelagem do Banco de Dados](./docs/DATABASE.md)
 - [Instalação detalhada](./docs/INSTALL.md)
 
+
+
+## Telas do Sistema
+
+### Início
+<p align="center"><img src="./public/images/prints/print-1.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+### Login
+<p align="center"><img src="./public/images/prints/print-2.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+### Cadastro
+<p align="center"><img src="./public/images/prints/print-3.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+### Pokémons
+<p align="center"><img src="./public/images/prints/print-4.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+### Usuários
+<p align="center"><img src="./public/images/prints/print-5.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+### Meu Perfil
+<p align="center"><img src="./public/images/prints/print-6.png" width="100%" alt="Desafio ipe.digital" style="width: 100%; border-radius: 20px;" /></p>
+
+
+
 ## Licença
 Esta aplicação de desafio é um software de código aberto licenciado sob a [licença MIT](https://opensource.org/licenses/MIT).
-
 
 ---
 
@@ -92,3 +120,5 @@ Esta aplicação de desafio é um software de código aberto licenciado sob a [l
 <br />
 
 <a href="https://ipe.digital" target="_blank"><img src="https://ipe.digital/wp-content/themes/bootscore-child-main/img/aviao.png" width="100%" alt="Desafio ipe.digital"></a>
+
+
